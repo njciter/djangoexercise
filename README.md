@@ -1,0 +1,2 @@
+# djangoexercise
+my exercise

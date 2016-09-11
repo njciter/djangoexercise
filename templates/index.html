@@ -12,12 +12,18 @@
 			</div>
 			</div>
 			<div class="row">
-			<div class="col-xs-12 col-md-2">运维专区</div>
-			<div class="col-xs-12 col-md-2">Django专区</div>
-			<div class="col-xs-12 col-md-2">部落建设</div>
+{% for b in blocks %}
+<div class="panel panel-default">
+   <div class="panel-heading">
+      <a href="#" style="font-size: 16px;">{{b.name}}</a>
+      <span class="pull-right">{{b.manager}}</span>
+   </div>
 
-
-			
+   <div class="panel-body">
+      {{b.desc}}
+   </div>
+</div>
+{% endfor %}			
 			</div>
 			</div>
 	</html>

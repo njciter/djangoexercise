@@ -1,17 +1,7 @@
-	<!doctype html>
-	<html>
-		<head>
-			<meta charset="utf-8" />
-			<title>论坛首页</title>
-			<link rel="stylesheet" href="/static/css/bootstrap.min.css"/>
-		</head>
-			<div class="container">
-			<div class="row">
-			<div class="col-xs-12 col-md-12">
-			<h2>Python部落论坛</h2>
-			</div>
-			</div>
-			<div class="row">
+{% extends "base.html" %}
+{% block content %}
+<div class="col-xs-12 col-md-10">
+
 {% for b in blocks %}
 <div class="panel panel-default">
    <div class="panel-heading">
@@ -24,7 +14,11 @@
    </div>
 </div>
 {% endfor %}			
-			</div>
-			</div>
-	</html>
+</div>
 
+<div class="col-xs-12 col-md-2">
+ <div class="well">个人中心</div>
+
+</div>
+
+{% endblock %}

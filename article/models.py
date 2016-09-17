@@ -15,3 +15,5 @@ class Article(models.Model):
     class Meta:
         verbose_name = "文章"
         verbose_name_plural = "文章"
+
+

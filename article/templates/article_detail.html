@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="col-xs-12 col-md-12">
+  <ol class="breadcrumb">
+    <li><a href="/">首页</a></li>
+    <li><a href="/article/list/{{ a.block_id }}">{{ a.block.name }}</a></li>
+    <li class="active">{{ a.title }}</li>
+  </ol>
+  <table class="table table-bordered">
+  	<tr>
+  		<td>
+        <h2>{{ a.title }}</h2>
+        {{ a.content }}
+      </td>
+  	</tr>
+ 
+  </table>
+ <!-- 
+  <table id="replyRegion" class="table mainTable">
+    <tr>
+      <td class="content">
+        <textarea class="form-control" id="commentContent" rows="3"></textarea>
+        <br />
+        <button class="btn btn-primary" id="commentBtn">发表评论</button>
+        <br />
+        <br />
+      </td>
+    </tr>
+  </table>
+ -->
+{% endblock %}

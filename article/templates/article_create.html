@@ -8,18 +8,23 @@
   </ol>
 <form action="/article/create/{{b.id}}" method="POST">{%csrf_token%}
   <label>标题</label>
-  <input type="text" name="title" value="{{title}}"/>
+  <input type="text" name="title" value="{{form.title.value}}"/>
   <br />
   <label>内容</label>
-  <textarea name="content">{{content}}</textarea>
+  <textarea name="content">{{form.content.value}}</textarea>
   <br />
   <label>提交</label>
   <button>提交</button>
   <br />
 </form>
-{%if error %}
-<div class="alert alert-danger">{{error}}</div>
-{%endif%}
+
+{% for field in form %}
+   {% if field.errors %}
+      {% for error in field.errors %}
+         <div class="alert alert-danger">{{field.label}}:{{error}}</div>
+      {% endfor %}
+   {% endif %}
+{% endfor %}
 
 </div>
 {% endblock %}
